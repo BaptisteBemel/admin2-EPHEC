@@ -15,7 +15,7 @@
 # sudo docker inspect mysqlb2b | grep IPAddress
 # sudo docker inspect nginx | grep IPAddress
 
-
+# Permet de lister tous les process fpm en cours
 systemctl -l | grep -i fpm
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
