@@ -13,4 +13,4 @@ COPY conf/named.conf.local /etc/bind/named.conf.local
 EXPOSE 53/udp
 EXPOSE 53/tcp
 
-CMD ["/usr/sbin/named", "-g", "-c", "/etc/bind/named.conf", "-u", "bind"]
+CMD ["named", "-g"]
