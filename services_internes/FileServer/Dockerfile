@@ -46,5 +46,5 @@ RUN mv /etc/samba/smb.conf /etc/samba/smbOrignial.conf
 COPY conf/smb.conf /etc/samba/smb.conf
 
 
-EXPOSE 136:136
+EXPOSE 139:139
 EXPOSE 445:445
