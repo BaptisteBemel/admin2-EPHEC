@@ -80,18 +80,22 @@ networks:
       driver: default
       config:
         - subnet: 192.168.0.0/24
+          gateway: 192.168.0.1
   direction_network:
     ipam:
       driver: default
       config:
-        - subnet: 192.168.0.0/27
+        - subnet: 192.168.1.0/27
+          gateway: 192.168.1.1
   commerciaux_network:
     ipam:
       driver: default
       config:
-        - subnet: 192.168.0.32/27
+        - subnet: 192.168.1.32/27
+          gateway: 192.168.1.33
   secretaire_network:
     ipam:
       driver: default
       config:
-        - subnet: 192.168.0.96/27
+        - subnet: 192.168.1.96/27
+          gateway: 192.168.1.97
