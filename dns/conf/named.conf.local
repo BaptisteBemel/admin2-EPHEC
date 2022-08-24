@@ -6,8 +6,10 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
-
 zone "mes-b2.ephec-ti.be" {
     type master;
-    file "/etc/bind/zones/db.mes-b2";
+    # file "/etc/bind/zones/db.mes-b2";
+    
+    # Changement effectué car ajout du DNSSEC
+    file "/etc/bind/db.mes-b2.signed";
 };
