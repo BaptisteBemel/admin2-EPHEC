@@ -1,3 +1,4 @@
+
 $TTL    604800
 @       IN      SOA     ns.mes-b2.ephec-ti.be. admin.mes-b2.ephec-ti.be. (
                               5         ; Serial
@@ -8,7 +9,7 @@ $TTL    604800
 ;
 
 ; Name servers
-mes-b2.ephec-ti.be.      IN      NS      ns.mes-b2.ephec-ti.be.
+mes-b2.ephec-ti.be.        IN      NS      ns.mes-b2.ephec-ti.be.
 
 ; A records for name servers
 ns             IN      A       135.125.239.192
@@ -26,7 +27,7 @@ pop3            IN      CNAME   mail
 imap            IN      CNAME   mail
 
 ;MX record
-mes-b2.ephec-ti.be.      IN      MX      10 mail
+mes-b2.ephec-ti.be.          IN      MX      10 mail
 
 ;mail A record
 mail            IN      A    135.125.239.192
@@ -34,6 +35,54 @@ mail            IN      A    135.125.239.192
 
 
 ; VOIP record
-_sip._udp	SRV     0       0       5060        sip 
-_sip._tcp	SRV     0       0       5060        sip
-sip		          IN      A	      135.125.239.192
+_sip._udp       SRV     0       0       5060        sip
+_sip._tcp       SRV     0       0       5060        sip
+sip                       IN      A           135.125.239.192
+
+$INCLUDE /etc/bind/Kmes-b2.ephec-ti.be.+008+27420.key
+$INCLUDE /etc/bind/Kmes-b2.ephec-ti.be.+008+06685.key
+$INCLUDE /etc/bind/db.mes-b2.signed
+
+$TTL    604800
+@       IN      SOA     ns.mes-b2.ephec-ti.be. admin.mes-b2.ephec-ti.be. (
+                              5         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+
+; Name servers
+mes-b2.ephec-ti.be.        IN      NS      ns.mes-b2.ephec-ti.be.
+
+; A records for name servers
+ns             IN      A       135.125.239.192
+
+
+; WWW A records
+@               IN      A       135.125.239.192
+www             IN      A       135.125.239.192
+b2b             IN      A       135.125.239.192
+
+
+;mail CNAME
+smtp            IN      CNAME   mail
+pop3            IN      CNAME   mail
+imap            IN      CNAME   mail
+
+;MX record
+mes-b2.ephec-ti.be.          IN      MX      10 mail
+
+;mail A record
+mail            IN      A    135.125.239.192
+
+
+
+; VOIP record
+_sip._udp       SRV     0       0       5060        sip
+_sip._tcp       SRV     0       0       5060        sip
+sip                       IN      A           135.125.239.192
+
+$INCLUDE /etc/bind/Kmes-b2.ephec-ti.be.+008+27420.key
+$INCLUDE /etc/bind/Kmes-b2.ephec-ti.be.+008+06685.key
+$INCLUDE /etc/bind/db.mes-b2.signed
