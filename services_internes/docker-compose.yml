@@ -12,7 +12,7 @@ services:
       - "53:53/tcp"
       - "53:53/udp"
     volumes:
-      - ./SOA Interne/conf/named.conf:8/etc/bind/named.conf
+      - ./SOA Interne/conf/named.conf:/etc/bind/named.conf
       - ./SOA Interne/conf/named.conf.options:/etc/bind/named.conf.options
       - ./SOA Interne/conf/named.conf.local:/etc/bind/named.conf.local
       - ./SOA Interne/zones/db.intra:/etc/bind/zones/db.intra
