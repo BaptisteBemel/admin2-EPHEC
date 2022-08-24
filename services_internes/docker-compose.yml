@@ -1,4 +1,4 @@
-version: "3.8" # optional since v1.27.0
+version: "3.3" # optional since v1.27.0
 
 services:
   soainterne:
@@ -12,7 +12,7 @@ services:
       - "53:53/tcp"
       - "53:53/udp"
     volumes:
-      - ./SOA Interne/conf/named.conf:/etc/bind/named.conf
+      - ./SOA Interne/conf/named.conf:8/etc/bind/named.conf
       - ./SOA Interne/conf/named.conf.options:/etc/bind/named.conf.options
       - ./SOA Interne/conf/named.conf.local:/etc/bind/named.conf.local
       - ./SOA Interne/zones/db.intra:/etc/bind/zones/db.intra
@@ -80,22 +80,18 @@ networks:
       driver: default
       config:
         - subnet: 192.168.0.0/24
-          gateway: 192.168.0.1
   direction_network:
     ipam:
       driver: default
       config:
         - subnet: 192.168.0.0/27
-          gateway: 192.168.0.1
   commerciaux_network:
     ipam:
       driver: default
       config:
         - subnet: 192.168.0.32/27
-          gateway: 192.168.0.33
   secretaire_network:
     ipam:
       driver: default
       config:
         - subnet: 192.168.0.96/27
-          gateway: 192.168.0.97
