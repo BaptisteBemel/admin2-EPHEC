@@ -22,23 +22,23 @@ RUN usermod -a -G commerciauxgroupe samba
 RUN usermod -a -G secretariatgroupe samba
 
 
-RUN chown samba:directiongroupe /partage/direction
-RUN chown samba:commerciauxgroupe /partage/commerciaux
-RUN chown samba:secretariatgroupe /partage/secretariat
+RUN chown samba:directiongroupe /etc/samba/partage/direction
+RUN chown samba:commerciauxgroupe /etc/samba/partage/commerciaux
+RUN chown samba:secretariatgroupe /etc/samba/partage/secretariat
 
 
-RUN chown g+w /partage/direction
-RUN chown g+w /partage/commerciaux
-RUN chown g+w /partage/secretariat
+RUN chmod g+w /etc/samba/partage/direction
+RUN chmod g+w /etc/samba/partage/commerciaux
+RUN chmod g+w /etc/samba/partage/secretariat
 
 
-RUN useradd --group commerciauxgroup directionUser1
+RUN useradd --group directiongroupe directionUser1
 RUN echo directionUser1:directionPassword | chpasswd
 
-RUN useradd --group commerciauxgroup commercialUser1
+RUN useradd --group commerciauxgroupe commercialUser1
 RUN echo commercialUser1:commercialPassword | chpasswd
 
-RUN useradd --group commerciauxgroup secretariatUser1
+RUN useradd --group secretariatgroupe secretariatUser1
 RUN echo secretariatUser1:secretariatPassword | chpasswd
 
 
