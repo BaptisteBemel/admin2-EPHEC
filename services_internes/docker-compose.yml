@@ -51,7 +51,7 @@ services:
       dockerfile: Dockerfile
     networks:
       direction_network:
-        ipv4_address: 192.168.0.2
+        ipv4_address: 192.168.1.2
     container_name: direction
     
     
@@ -61,7 +61,7 @@ services:
       dockerfile: Dockerfile
     networks:
       commerciaux_network:
-        ipv4_address: 192.168.0.34
+        ipv4_address: 192.168.1.34
     container_name: commerciaux
     
     
@@ -71,7 +71,7 @@ services:
       dockerfile: Dockerfile
     networks:
       secretaire_network:
-        ipv4_address: 192.168.0.98
+        ipv4_address: 192.168.1.98
     container_name: secretaire
 
 networks:
