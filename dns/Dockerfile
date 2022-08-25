@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-RUN apt-get -y update
+RUN apt-get -y update && -y upgrade
 RUN apt-get install -y bind9
 
 RUN mkdir -p /etc/bind/zones
