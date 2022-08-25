@@ -65,7 +65,7 @@
                   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                   $sql = "INSERT INTO b2bboutique (ARTICLE, DESCRIPTION, PRIX)
-                  VALUES ('$article', '$description', $prix_float)";
+                  VALUES (sanitize_string($article), sanitize_string('$description'), sanitize_string($prix_float))";
 
                   $conn->exec($sql);
                   echo "New record created successfully";
@@ -76,6 +76,15 @@
                 }
                 $conn = null;
         }
+	
+	function sanitize_string($str) {
+		if (get_magic_quotes_gpc()) {
+			$sanitize = mysqli_real_escape_string(stripslashes($str));	 
+		} else {
+			$sanitize = mysqli_real_escape_string($str);	
+		} 
+		return $sanitize;
+	}
 	?>
 
 
