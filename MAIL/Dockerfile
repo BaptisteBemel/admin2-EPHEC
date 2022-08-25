@@ -39,7 +39,7 @@ COPY dovecot/conf.d/10-ssl.conf /etc/dovecot/conf.d/10-ssl.conf
 RUN apt install spamassassin spamc -y
 RUN groupadd spamd
 RUN useradd -g spamd -s /usr/sbin/nologin -d /var/log/spamassassin -m spamd
-COPY spamassassin/spamassassin /etc/default/spamassassin
+COPY spamassassin /etc/default/spamassassin
 
 RUN chmod -R 755 /etc/postfix
 # #1.INSTALL
